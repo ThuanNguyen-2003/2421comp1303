@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Basil George">
+    <title>Ai Là Triệu Phú</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <main class="container">
+        <!-- Màn hình bắt đầu -->
+         <!-- Logo -->
+        <section class="start-box custom">
+            <div class="game-logo"> 
+                <img src="img/logo.png" alt="logo">
+        <!-- Nút giới thiệu và hướng dẫn -->
+            <div class="user-info">
+            <style>
+                #wrapper{
+                    position: static; 
+                }
+                button#btn-open{
+                    background-color: rgba(14, 122, 224, 0);
+                    color: #fff;
+                    border: 0.5px solid #2569b6;
+                    padding: 1rem;
+                    cursor: pointer;
+                    border-radius: 1rem;
+                    transition: all .3s linear;
+                    animation: blinker 1s linear;
+                    font-size: 1rem;
+                }
+
+                button#btn-open:hover{
+                     background-color: gold;
+                     color: black;
+                }
+
+                #modal-container{
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    background: rgba(0,0,0, 0.5);
+                    height: 100vh;
+                    opacity: 0;
+                    pointer-events: none;
+                    transition: all 0.3s ease-in-out;
+                }
+
+                #modal-container.show{
+                    opacity: 1;
+                    pointer-events:all;
+                }
+
+                .modal{
+                    position: relative;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    max-width: 700px;
+                    background: #5e5a5a;
+                    transition: all 0.4s ease-in-out;
+                }
+                
+                #modal-container.show {
+                    opacity: 1;
+                    pointer-events:all;
+                }
+
+                #modal-container.show .modal{
+                    top: 100px;
+                }
+
+                .modal-header{
+                    padding: 20px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    border-bottom: 1px solid #e9ecef;
+                }
+
+                .modal-header h3{
+                    margin: 0;
+                }
+
+                .modal-header button#btn-close{
+                    border: none;
+                    background: none;
+                    outline: none;
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+
+                button#btn-close:hover{
+                    background-color: #d71515;
+                    color: rgb(249, 249, 249);
+                }
+
+                .modal-body{
+                    padding: 0px 20px 20px;
+                    overflow-y: scroll;
+                    width : 660px;
+                    height : 300px;
+                    line-height: 1.5;
+                }
+
+            </style>
+            <div id="wrapper">
+                <button id="btn-open">Giới thiệu và hướng dẫn</button>
+                <div id="modal-container">
+                    <div class="modal" id="modal-game">
+                        <div class="modal-header">
+                            <h3>Giới thiệu và hướng dẫn</h3>
+                            <button id="btn-close"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                        <div class="modal-body">
+                            <h3>Giới thiệu về game:</h3>
+                            <p>Ai là Triệu phú là một trò chơi truyền hình nổi tiếng trên toàn thế giới, 
+                                được chuyển thể thành nhiều phiên bản trò chơi trên máy tính và điện thoại. 
+                                Trong trò chơi này, người chơi sẽ trả lời các câu hỏi trắc nghiệm liên quan 
+                                đến kiến thức về Lập trình Python ở chương trình Tin học 10 - Chủ đề F.
+                                Độ khó của câu hỏi sẽ tăng dần theo từng vòng chơi.
+                                Người chơi phải cố gắng trả lời đúng các câu hỏi để chinh phục các mốc tiền thưởng hấp dẫn. 
+                                </p>
+                            <ul></ul>
+                            <h3>Hướng dẫn chơi game:</h3>
+                            <p><b>1. Bắt đầu: </b></p>
+                            <ul>
+                                <li>Chọn vào nút sẵn sàng để bắt đầu trò chơi.</li>
+                                <li>Người chơi bắt đầu với câu hỏi đầu tiên và mốc tiền thưởng thấp nhất.</li>
+                            </ul>
+                            <p><b>2. Trả lời câu hỏi:</b></p>
+                            <ul>
+                                <li>Người chơi sẽ có 60s để trả lời câu hỏi.</li>
+                                <li>Mỗi câu hỏi sẽ có 4 đáp án A, B, C, D.</li>
+                                <li>Người chơi phải chọn một đáp án mà mình cho là đúng.</li>
+                                <li>Trả lời đúng, người chơi sẽ tiếp tục với câu hỏi tiếp theo.</li>
+                                <li>Trả lời sai, trò chơi sẽ kết thúc và người chơi phải chơi lại.</li>
+                            </ul>
+                            <p><b>3. Các mốc tiền thưởng: </b></p>
+                            <ul>
+                                <li>Trả lời đúng mỗi câu hỏi, người chơi sẽ tiến đến mốc tiền thưởng cao hơn.</li>
+                                <li>Có các mốc quan trọng (mốc 5, 10 và 15) đảm bảo người chơi sẽ nhận được số tiền đó nếu trả lời sai sau mốc đó.</li>
+                            </ul>
+                            <p><b>4. Quyền trợ giúp: </b></p>
+                            <ul>
+                                <li>50/50: loại bỏ 2 đáp án sai.</li>
+                                <li>Gọi điện thoại cho người thân: gọi điện cho một người máy AI để xin ý kiến về câu trả lời.</li>
+                                <li>Hỏi ý kiến khán giả: hiển thị phần trăm bình chọn của khán giả cho từng phương án.</li>
+                            </ul>
+                            <p><b>5. Kết thúc: </b></p>
+                            <ol>Trò chơi kết thúc khi: </ol>
+                            <ul>
+                                <li>Người chơi trả lời sai một câu hỏi. </li>
+                                <li>Hết thời gian trả lời mà vẫn chưa chọn được đáp án.</li>
+                                <li>Trả lời đúng tất cả 15 câu hỏi.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                const open = document.getElementById('btn-open');
+                const close = document.getElementById('btn-close');
+         
+                const modal_container = document.getElementById('modal-container');
+                const modal_demo = document.getElementById('modal-game');
+         
+                open.addEventListener('click', ()=>{
+                    modal_container.classList.add('show');
+                });
+                close.addEventListener('click', ()=>{
+                    modal_container.classList.remove('show');
+                });
+                modal_container.addEventListener('click', (e)=>{
+                    if(!modal_demo.contains(e.target)){
+                        close.click();
+                    }
+                });
+            </script>
+            </div>
+        <!-- Nút sẵn sàng -->
+            <div class="user-info">
+                <div class="start-game-btn btn">▶ Sẵn sàng</div>
+            </div>
+        </section>
+        <!-- Màn hình chính -->
+        <section class="game-box custom">
+            <div class="game">
+                <div class="timer">15</div>
+                <div class="current-question-amount"></div>
+                <div class="life-line-display-box">
+                    <div class="call">
+                        <img src="img/call.png" alt="call">
+                        <div class="call-answer"></div>
+                    </div>
+                    <div class="au-cover">
+                        <h4 class="alpha">ABCD</h4>
+                        <div class="au-container">
+                            <div class="au-box" id="0"><span></span><div class="bx"></div></div>
+                            <div class="au-box" id="1"><span></span><div class="bx"></div></div>
+                            <div class="au-box" id="2"><span></span><div class="bx"></div></div>
+                            <div class="au-box" id="3"><span></span><div class="bx"></div></div>
+                        </div>
+                    </div>
+                    <div class="amount-won"></div>
+                </div>
+                <div class="question-box">
+                    <div class="question">
+                        <div class="question-number"></div>
+                        <div class="question-text"></div>
+                    </div>
+                    <div class="option-box">
+                        <div class="option" id="0" onclick="check(this)"><span class="span-o">A: </span><span class="opt"></span></div>
+                        <div class="option" id="1" onclick="check(this)"><span class="span-o">B: </span><span class="opt"></span></div>
+                        <div class="option" id="2" onclick="check(this)"><span class="span-o">C: </span><span class="opt"></span></div>
+                        <div class="option" id="3" onclick="check(this)"><span class="span-o">D: </span><span class="opt"></span></div>
+                    </div>
+                    <div class="next-question">
+                        <button type="button" class="next-question-btn btn">Câu hỏi tiếp theo</button>
+                        <button type="button" class="playAgain-btn btn"> Chơi lại ⟲ </button>
+                    </div>
+                </div>
+            </div>
+            <div class="side">
+                <div class="life-lines">
+                    <div class="fify50"><span class="cancel"></span></div>
+                    <div class="callAFriend"><span class="cancel"></span></div>
+                    <div class="askTheAudience"><span class="cancel"></span></div>
+                </div>
+                <div class="price-box">
+                    <ol class="prices" reversed>
+                        <li></span>&#8363;<span></span>250.000.000</li>
+                        <li></span>&#8363;<span></span>150.000000</li>
+                        <li></span>&#8363;<span></span>80.000.000</li>
+                        <li></span>&#8363;<span></span>40.000.000</li>
+                        <li></span>&#8363;<span></span>30.000.000</li>
+                        <li></span>&#8363;<span></span>22.000.000</li>
+                        <li></span>&#8363;<span></span>14.000.000</li>
+                        <li></span>&#8363;<span></span>10.000.000</li>
+                        <li></span>&#8363;<span></span>6.000.000</li>
+                        <li></span>&#8363;<span></span>3.000.000</li>
+                        <li></span>&#8363;<span></span>2.000.000</li>
+                        <li></span>&#8363;<span></span>1.000.000</li>
+                        <li></span>&#8363;<span></span>600.000</li>
+                        <li></span>&#8363;<span></span>400.000</li>
+                        <li></span>&#8363;<span></span>200.000</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

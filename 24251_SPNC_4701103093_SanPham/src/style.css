@@ -1,0 +1,669 @@
+/* Font chữ */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800&display=swap');
+html{
+    font-size: 16px;
+    margin: 0;
+}
+/* Màu */
+:root{
+    --primary-color: #2569b6;
+    --white-color: #fff;
+    --black-color: #000;
+    --correct-color: #279627;
+    --wrong-color: #e61212;
+}
+*,
+*::before
+*::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+/* Cài đặt màn hình của game */
+body{
+    font-size: 62.5%;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    background-color: var(--black-color);
+    color: var(--white-color);
+}
+.container{
+    max-width: 60rem;
+    margin: 3rem auto;
+    font-size: .9rem;
+}
+.custom{
+    max-width: 100%;
+    border-radius: 1rem;
+}
+/** Trang bắt đầu **/
+.start-box{
+    /* background-color: #1f1c1c; */
+    background-image : url("img/BackGround2.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1rem;
+    animation: pulse 1s linear;
+}
+.start-box.show{
+    display: none;
+}
+/*Cài đặt vị trí và hiệu ứng cho logo */
+.game-logo{
+    display: block;
+    justify-content: center;
+    animation: pulse 1s linear;
+    margin-bottom: .5rem;
+}
+.game-logo img{
+    width: 30rem;
+    height: 30rem;
+}
+/*Cài đặt vi trí và hiệu ứng cửa hướng dẫn*/
+.instruction{
+    display: inline-block;
+    background-color: #666161;
+    padding: .5rem;
+    border-radius: 1rem;
+    margin-top: .5rem;
+    animation: pulse 1s linear;
+}
+.instruction h3{
+    text-align: center;
+}
+/*Cài đặt vị trí và hiệu ứng của nội dung trong hộp thoại*/
+.user-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: .5rem;
+    animation: blinker 1s linear;
+}
+.user-info input{
+    padding: .8rem;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    outline: none;
+}
+/*Cài đặt nút bấm Sẵn sàng*/
+.btn{
+    padding: .8rem;
+    border: 0.5px solid var(--primary-color);
+    cursor: pointer;
+    border-radius: 1rem;
+    margin-top: .5rem;
+    transition: all .3s linear;
+    animation: pulse 1s linear;
+}
+/*Cài đặt hiệu ứng hover cho nút bấm Sẵn sàng*/
+.start-game-btn:hover{
+    background-color: gold;
+    color: var(--black-color);
+}
+
+/** Cài đặt màn hình chính**/
+.game-box{
+    display: none;
+    min-height: 30rem;
+    box-shadow: 0 .3rem .5rem rgba(255, 255, 255, 0.3);
+}
+.game-box.show{
+    display: flex;
+}
+.game-box .game{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    background-image: url("img/BackGround1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border: 1px solid white;
+}
+.game-box .current-question-amount{
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    display: none;
+}
+/* Cài đặt đồng hồ đếm ngược */
+.game-box .game .timer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    width: 6rem;
+    height: 6rem;
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 800;
+    border-radius: 50%;
+    border: 1.5px solid rgb(48, 2, 154);
+    color: white;
+    transition: all .1s linear;
+}
+.game-box .game .timer.less-time{
+    border: 1.5px solid red;
+    color: red;
+    animation: blinker 1s linear;
+    animation-iteration-count: 11;
+}
+/** Cài đặt kiểu mặc định cho hộp thoại hiển thị giữa màn hình **/
+.game-box .game .life-line-display-box{
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px 2px 0px black;
+    bottom: 0;
+    margin-bottom: 17rem;
+    width: auto;
+    height: 2rem;
+    background-color: none;
+    border-radius: 3rem;
+    transition: all .3s linear;
+    animation: moveDown 1s linear;
+}
+/*Hiệu ứng rơi xuống*/
+@keyframes moveDown{
+    0%{
+        opacity: 0;
+        transform: translateY(-20rem);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.game-box .game .life-line-display-box.show{
+    display: flex;
+}
+/*Hiển thị thông báo nội dung giải thưởng trong hộp thoại */
+.game-box .game .life-line-display-box .amount-won{
+    display: none;
+    color: gold;
+    background-color: #1f1c1c71;
+    font-weight: bold;
+}
+.game-box .game .life-line-display-box .amount-won.show{
+    display: block;
+}
+/*Hiển thị nội dung điện thoại trong hộp thoại*/
+.life-line-display-box .call{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.life-line-display-box .call.show{
+    display: flex;
+}
+/*Hiển thị hiệu ứng điện thoại trong hộp thoại*/
+.life-line-display-box .call img{
+    width: 5rem;
+    height: 5rem;
+    transition: all .3s linear;
+    animation: pulse 1s linear 8;
+}
+/*Hiển thị câu trả lời trợ giúp trong hộp thoại*/
+.life-line-display-box .call .call-answer{
+    text-align: center;
+    color: white;
+    background-color: #00000080;
+    font-weight: bold;
+}
+/* Hiệu ứng nhấp nháy*/
+@keyframes pulse{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/**Cài đặt quyền trợ giúp hỏi ý kiến khán giả**/
+.au-cover{
+    display: none;
+    flex-direction: column;
+}
+.au-cover.show{
+    display: block;
+}
+/*Cài đặt hiệu ứng chữ*/
+.au-cover .alpha{
+    letter-spacing: 3.75rem;
+    padding-left: 1.5rem;
+    text-shadow: 2px 2px 0px black;
+    color: rgb(255, 217, 0) ;
+}
+.au-container{
+    display: flex;
+    width: 17.25rem;
+    background-color: rgba(1, 12, 63, 0.853);
+}
+/*Cài đặt hiệu ứng xuất hiện của biểu đồ cột*/
+.au-container.show{
+    display: flex;
+    transition: all 2s;
+    animation: moveDown 1s linear;
+}
+@keyframes moveDown{
+    0%{
+        opacity: 0;
+        transform: translateY(-200px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+/*Cài đặt các hiệu ứng cho biểu đồ cột*/
+.au-box{
+    width: 4rem;
+    height: 7rem;
+    border: 1px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: all .3s;
+    cursor: pointer;
+}
+/*Cài đặt hiển thị phần trăm đáp án trong biểu đồ cột*/
+.bx{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: gold;
+    opacity: 0.7;
+    transition: all .3s;
+}
+.au-box:not(:last-child){
+    margin-right: 5px;
+}
+/** Cài đặt hộp thoại câu hỏi **/
+.game-box .game .question-box{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    bottom: 0;
+}
+/*Cài đặt các hiệu ứng trong hộp thoại câu hỏi*/
+.game-box .game .question-box .question{
+    position: relative;
+    background-color: #0e0543ee;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 1.2rem 1rem;
+    border: 1px solid #3689e7;
+    border-radius: 3rem;
+    opacity: 0;
+}
+/*Cài đặt số câu hỏi đã trả lời*/
+.game-box .game .question-box .question .question-number{
+    position: absolute;
+    display: flex;
+    top: -1.2rem;
+    left: -1rem;
+    background-color: var(--black-color);
+    border: 1px solid #3689e7;
+    padding: .5rem;
+    border-radius: 50%;
+}
+.game-box .game .question-box .question.show{
+    animation: zoomInOut .3s linear forwards;
+}
+/*Hiệu ứng phóng to rồi thu nhỏ*/
+@keyframes zoomInOut{
+    0%{
+        opacity: 0;
+        transform: scale(3);
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+/*Cài đặt hộp thoại đáp án***/
+.game-box .game .question-box .option-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: 400;
+    padding-bottom: 1rem;
+}
+/*Cài đặt hiệu ứng chữ*/
+.game-box .game .question-box .option-box .option{
+    background-color: #170058d0;
+    flex-basis: calc(50% - 2rem);
+    max-width: calc(50% - 2rem);
+    margin-top: 5px;
+    padding: 14px 5px;
+    font-size: inherit;
+    text-transform: none;
+    font-weight: 400;
+    color: #fff;
+    border:1px solid #3689e7;
+    border-radius: 3rem;
+    cursor: pointer;
+    opacity: 0; 
+}
+/*Cài đặt hiệu ứng hover cho hộp thoại đáp án*/
+.game-box .game .question-box .option-box .option:hover{
+    background-color: var(--primary-color);
+    color: var(--black-color);
+}
+/*Cài đặt màu cho tiêu đề (ABCD) của đáp án*/
+.game-box .game .question-box .option-box .option .span-o{
+    color: gold;
+}
+/*Cài đặt màu cho nội dung đáp án*/
+.game-box .game .question-box .option-box .option .opt{
+    color: #fff;
+}
+/*Cài đặt hiệu ứng xuất hiện cho hộp thoại đáp án*/
+.game-box .game .option-box .option:nth-child(1).show-1,
+.game-box .game .option-box .option:nth-child(2).show-1{
+    animation: zoomInOut .3s linear forwards;
+    animation-delay: .5s;
+}
+.game-box .game .option-box .option:nth-child(3).show-2,
+.game-box .game .option-box .option:nth-child(4).show-2{
+    animation: zoomInOut .3s linear forwards;
+    animation-delay: 1s;
+}
+/*Cài đặt vô hiệu hóa chuột khi hiển thị đáp án */
+.game-box .game .question-box .option-box .option.already-answered{
+    pointer-events: none;
+}
+/**Cài đặt hiển thị đáp án đúng**/
+.game-box .game .question-box .option-box .option.show-correct{
+    background-color: #11c466;
+    border-color: #059e4c;
+    color: #fff;
+    transition: all 1.3s ease-in-out;
+    
+}
+/*Cài đặt hiệu ứng xuất hiện đáp án đúng*/
+.game-box .game .question-box .option-box .option.correct{
+    background-color: #11c466;
+    border-color: #059e4c;
+    color: #fff;
+    opacity: 1;
+    animation: blinker 0.5s linear 2;
+}
+/**Cài đặt hiển thị khi đáp án sai**/
+.game-box .game .question-box .option-box .option.wrong{
+    background-color: var(--wrong-color);
+    border-color: var(--wrong-color);
+    color: #fff;
+    opacity: 1;
+}
+/*Hiệu ứng nhấp nháy*/
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+  /**Cài đặt nút bấm câu hỏi tiếp theo**/
+.next-question{
+    padding-bottom: 1rem;
+}
+.next-question-btn{
+    outline: none;
+    border: none;
+    border: 1px solid #3689e7;
+    background-color: #00000081;
+    color: #fff;
+    display: none;
+    animation: scaleDown 0.5s linear forwards;
+}
+/*Hiệu ứng thu nhỏ rồi phóng to*/
+@keyframes scaleDown {
+    0% {
+      transform: scale(0.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+.next-question-btn.show{
+    display: inline-block;
+}
+/*Cài đặt hiệu ứng hover cho nút bấm câu hỏi tiếp theo*/
+.next-question-btn:hover{
+    background-color: var(--primary-color);
+    color: var(--black-color);
+}
+/**Cài đặt nút bấm chơi lại**/
+.playAgain-btn{
+    outline: none;
+    border: none;
+    border: 1px solid #3689e7;
+    background-color: #00000081;
+    color: #fff;
+    display: none;
+    animation: scaleDown 0.5s linear forwards;
+}
+.playAgain-btn.show{
+    display: inline-block;
+}
+/*Cài đặt hiệu ứng hover cho nút bấm chơi lại*/
+.playAgain-btn:hover{
+    background-color:rgba(207, 178, 13, 0.938);
+    color: var(--black-color);
+}
+
+/** Cài đặt hộp thoại hiển thị các quyền trợ giúp **/
+.game-box .side{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+.game-box .side .life-lines{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--black-color);
+    width: 100%;
+}
+.game-box .side .life-lines .fify50,
+.game-box .side .life-lines .callAFriend,
+.game-box .side .life-lines .askTheAudience
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-size: 100% 100%;
+    height: 4rem;
+    width: 4rem;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.game-box .side .life-lines .fify50{
+    background-image: url("img/Bo2CauHoi.png");
+}
+/*Cài đặt hiệu ứng hover cho các quyền trợ giúp*/
+.game-box .side .life-lines :hover{
+    box-shadow: 0px 0px 10px 5px white;
+    transform: scale(1.1);
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+.game-box .side .life-lines .callAFriend{
+    background-image: url("img/GoiDienThoai.png");
+}
+.game-box .side .life-lines .askTheAudience{
+    background-image: url("img/YKienKhanGia.png");
+}
+/*Cài đặt hình ảnh sau khi dùng quyền trợ giúp*/
+.fify50 .cancel,
+.callAFriend .cancel,
+.askTheAudience .cancel
+{
+    background: url("img/Cancel2.png");
+    background-size: 100% 100%;
+    display: none;
+    position: absolute;
+    width: 4.5rem; 
+    height: 4.5rem; 
+}
+.fify50 .cancel.show,
+.callAFriend .cancel.show,
+.askTheAudience .cancel.show
+{
+    display: flex;
+}
+.game-box .side .price-box{
+    margin-top: 2rem;
+}
+.game-box .side .price-box .prices{
+    list-style-position: inside;
+    margin-left: 0;
+    line-height: 1.25rem;
+}
+.game-box .side .price-box .prices li::marker{
+    background-color: red;
+}
+/*Cài đặt thụt đầu dòng cho tiền thưởng*/
+.game-box .side .price-box .prices li{
+    padding: 0 .5rem;
+    text-indent: -.1rem;
+}
+/*Cài đặt khoảng cách giữa số và đơn vị tiền tệ*/
+.game-box .side .price-box .prices span{
+    margin: 0 .3rem;
+}
+/*Cài đặt màu cho giải thưởng */
+.game-box .side .price-box .prices li{
+    color: gold;
+}
+/*Cài đặt màu cho các mốc giải thưởng*/
+.game-box .side .price-box .prices li:nth-child(1),
+.game-box .side .price-box .prices li:nth-child(11),
+.game-box .side .price-box .prices li:nth-child(6)
+{
+    color: #fff;
+}
+
+/*Cài đặt màn hình tương thích trên các thiết bị*/
+
+@media only screen and (max-width: 920px){
+
+    .container {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+    }
+    .container .custom{
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        border-radius: 0;
+    }
+    .game-box{
+        display: none;
+        width: 100%;
+        height: 100%;
+        box-shadow: none;
+    }
+    .game-box.show{
+        display: flex;
+        flex-direction: column;
+    }
+    .game-box .game{
+        width: 100%;
+        height: 90%;
+        margin: 0;
+        order: 2;
+        border-radius: 0;
+        border: 1px solid var(--white-color);
+        border-top: none;
+    }
+    .game-box .side{
+        width:100%;
+        height: 10%;
+        margin: 0;
+        order: 1;
+        padding: 0;
+        border: 1px solid var(--white-color);
+    }
+    .price-box .prices{
+        display: none;
+    }
+    .game-box .game .question-box .question .question-number,
+    .game-box .current-question-amount
+    {
+        display: block;
+    }
+}
+
+@media all and (max-width: 480px){
+
+    .container {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+    }
+    .container .custom{
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        border-radius: 0;
+    }
+    .game-box{
+        display: none;
+        width: 100%;
+        height: 100%;
+        box-shadow: none;
+    }
+    .game-box.show{
+        display: flex;
+        flex-direction: column;
+    }
+    .game-box .game{
+        width: 100%;
+        height: 90%;
+        margin: 0;
+        order: 2;
+        border-radius: 0;
+        border: 1px solid var(--white-color);
+        border-top: none;
+    }
+    .game-box .side{
+        width:100%;
+        height: 10%;
+        margin: 0;
+        order: 1;
+        padding: 0;
+        border: 1px solid var(--white-color);
+    }
+    .price-box .prices{
+        display: block;
+    }
+    .game-box .game .question-box .question .question-number,
+    .game-box .current-question-amount
+    {
+        display: block;
+    }
+}

@@ -1,0 +1,284 @@
+{
+  "easy": [
+    {
+      "question": "Trong ngôn ngữ lập trình Python, câu lệnh nào sau đây là khai báo biến?",
+      "options": [ "n = 50", "n==50", "n>50", "n!=50" ],
+      "answer": 0
+    },
+    {
+      "question": "Thư viện math trong Python cung cấp các chương trình có sẵn với các hàm",
+      "options": [ "Kí tự", "Số học", "Logic", "Kí tự và logic" ],
+      "answer": 1
+    },
+    {
+      "question": "Bài toán giải phương trình bậc nhất ax+b=0 có các biến là",
+      "options": [ "a,b,x", "a,b", "x", "b,x" ],
+      "answer": 0
+    },
+    {
+      "question": "“Chương trình Python là một tệp văn bản có đuôi mặc định là",
+      "options": [ ".pas", ".py", ".exe", ".doc" ],
+      "answer": 1
+    },
+    {
+      "question": "Khi viết t = 5+6 thì biến t thuộc kiểu",
+      "options": [ "Số nguyên", "Số thực", "Kiểu logic", "Số phức" ],
+      "answer": 0
+    },
+    {
+      "question": "Khi viết s= 'ha noi' thì biến s thuộc kiểu",
+      "options": [ "Số nguyên", "Số thực", "Kiểu logic", "Kiểu ký tự" ],
+      "answer": 3
+    },
+    {
+      "question": "Khi viết y =2.5 thì biến y thuộc kiểu",
+      "options": [ "Số nguyên", "Số thực", "Kiểu logic", "Số phức" ],
+      "answer": 1
+    },
+    {
+      "question": "Để khai báo biến x kiểu thực ta viết",
+      "options": [ "x = 5", "x = 0.2", "x:5", "x==5" ],
+      "answer": 1
+    },
+    {
+      "question": "Trong Python, để xuất giá trị của tích x.y ra màn hình, ta sẽ dùng lệnh",
+      "options": [ "print(''x*y'')", "print(x*y)", "print(''x''*''y'')", "Print(x*y)" ],
+      "answer": 1
+    },
+    {
+      "question": "Đâu là quy tắc SAI khi đặt tên cho biến trong Python?",
+      "options": [ "Đặt tên trùng keyword ", "Chữ cái, chữ số, dấu gạch dưới", "Không được bắt đầu bằng chữ số", "Bắt đầu bằng chữ số" ],
+      "answer": 3
+    },
+    {
+      "question": "Trong Python phép toán lấy phần dư là",
+      "options": [ "%", "mod", "//", "div" ],
+      "answer": 0
+    },
+    {
+      "question": "Trong Python phép toán lấy phần nguyên là",
+      "options": [ "%", "mod", "//", "div" ],
+      "answer": 2
+    },
+    {
+      "question": "Trong phép toán quan hệ Phép So Sánh Bằng trong Python được viết là",
+      "options": [ "==", "=", "<=", ">=" ],
+      "answer": 0
+    },
+    {
+      "question": "Trong phép toán quan hệ Phép Khác trong Python được viết là",
+      "options": [ "==", "!=", "#", "<>" ],
+      "answer": 1
+    },
+    {
+      "question": "x^2 được biểu diễn trong Python là",
+      "options": [ "x**2", "x*2", "x^2", "x**" ],
+      "answer": 0
+    },
+    {
+      "question": "Trong Python câu lệnh gán có dạng",
+      "options": [ "<tên biến> := <biểu thức>", "<tên biến> != <biểu thức>", "<tên biến> == <biểu thức>", "<tên biến> = <biểu thức>" ],
+      "answer": 3
+    },
+    {
+      "question": "Để đưa ra màn hình dòng chữ “xin chào” trong Python ta dùng lệnh?",
+      "options": [ "print(xin chao)", "print('xin chao')", "Print (xin chao)", "Print('xin chao')" ],
+      "answer": 1
+    },
+    {
+      "question": "Quy tắc tính ưu tiên của lũy thừa là",
+      "options": [ "Trái qua phải, ưu tiên sau dấu ( )", "Phải qua trái, ưu tiên sau dấu ( )", "Trái qua phải, ưu tiên sau * /", "Phải qua trái, cùng hàng với */" ],
+      "answer": 1
+    },
+    {
+      "question": "Mỗi ngôn ngữ lập trình thường có các thành phần cơ bản là",
+      "options": [ "Chữ cái và cú pháp", "Chữ cái và ngữ nghĩa", "Chữ cái, cú pháp và ngữ nghĩa", "Cú pháp và ngữ nghĩa" ],
+      "answer": 2
+    },
+    {
+      "question": "Tên nào sau đây trong ngôn ngữ Python là đặt đúng theo quy cách",
+      "options": [ "Bai#1", "Bai 1", "1_Bai 1", "Bai1" ],
+      "answer": 3
+    },
+    {
+      "question": "Đâu là quy tắc đúng khi đặt tên cho biến trong Python?",
+      "options": [ "Bắt đầu bằng chữ", "Dùng từ khóa có sẵn của Python", "Bắt đầu bằng một chữ số", "Chứa các kí hiệu như !,@, #." ],
+      "answer": 0
+    },
+    {
+      "question": "Tên nào sau đây trong ngôn ngữ Python là đặt sai theo quy cách",
+      "options": [ "Bai#1", "Bai1", "_Bai 1", "Bai1_" ],
+      "answer": 0
+    },
+    {
+      "question": "Để chạy chương trình, Python dùng lệnh",
+      "options": [ "Ctrl + F9", "Alt + F9", "Run", "Exit" ],
+      "answer": 2
+    },
+    {
+      "question": "Tên biến nào sau đây không hợp lệ?",
+      "options": [ "R", "Ban_kinh_hinh_tron", "10ABT", "Dien_tich_hinh_tron" ],
+      "answer": 2
+    },
+    {
+      "question": "Tên biến nào sau đây hợp lệ?",
+      "options": [ "True", "False", "10VD", "true" ],
+      "answer": 3
+    },
+    {
+      "question": "Tên biến nào sau đây hợp lệ?",
+      "options": [ "Hinh  chu  nhat","Bai_tap","Print()","11_HCN" ],
+      "answer": 1
+    },
+    {
+      "question": "Trong Python, phép gán giá trị cho một biến, ta dùng dấu",
+      "options": [ "Dấu bằng =", "Dấu thăng #", "Dấu ngoặc ( )", "Dấu ngoặc [ ]" ],
+      "answer": 0
+    },
+    {
+      "question": "Ý nghĩa của dòng lệnh print() là",
+      "options": [ "Xuất kết quả trong câu lệnh", "Nhập 1 giá trị cho biến", "Xuất dữ liệu ra màn hình", "Nhập nhiều giá trị cho biến" ],
+      "answer": 2
+    },
+    {
+      "question": "Để kết thúc một phiên làm việc trong python, ta có thể?",
+      "options": [ "Nháy dấu X góc phải màn hình", "Gõ câu lệnh quit() rồi ấn Enter", "Sử dụng câu lệnh Exit", "Cả ba cách làm trên đều đúng" ],
+      "answer": 3
+    },
+    {
+      "question": "Giá trị của biểu thức 4 + 15 / 5 trong Python là bao nhiêu? ",
+      "options": [ "7", "2", "4", "1" ],
+      "answer": 0
+    },
+    {
+      "question": "Ngôn ngữ nào sau đây không phải ngôn ngữ bậc cao?",
+      "options": [ "C/C++", "Assembly", "Python", "Java" ],
+      "answer": 1
+    },
+    {
+      "question": "Khẳng định nào sau đây về Python là đúng?",
+      "options": [ "Là một ngôn ngữ cấp cao", "Là một ngôn ngữ thông dịch", "Là ngôn ngữ hướng đối tượng", "Tất cả các đáp án đều đúng" ],
+      "answer": 3
+    },
+    {
+      "question": "Kí hiệu nào dùng để xác định các khối lệnh trong Python?",
+      "options": [ "Dấu ngoặc nhọn { }", "Dấu ngoặc vuông [ ]", "Thụt lề", "Dấu ngoặc đơn ( )" ],
+      "answer": 2
+    },
+    {
+      "question": "Đâu là quy tắc đúng khi đặt tên cho biến trong Python?",
+      "options": [ "Bắt đầu bằng dấu gạch dưới", "Sử dụng keyword làm tên biến", "Bắt đầu bằng một chữ số", "Có các ký hiệu như ! @ # %" ],
+      "answer": 0
+    },
+    {
+      "question": "Lệnh nào dùng để lấy dữ liệu đầu vào từ người dùng trong Python?",
+      "options": [ "cin >>", "scanf()", "print()", "input()"],
+      "answer": 3
+    },
+    {
+      "question": "Câu lệnh sử dụng toán tử and trả về kết quả TRUE khi nào?",
+      "options": [ "Cả hai toán hạng đều là TRUE", "Cả hai toán hàng đều là FALSE", "Một trong hai toán hạng là TRUE", " Toán hạng đầu tiên là TRUE" ],
+      "answer": 1
+    }
+
+  ],
+    "medium": [
+        {
+            "question": "Ý nghĩa của hàm __init__() trong Python là gì?",
+            "options": ["Khởi tạo một lớp để sử dụng", "Gọi một đối tượng mới khởi tạo", "Đưa tất cả các thuộc tính về 0", "Tất cả các đáp án đều đúng"],
+            "answer": 1
+        },
+        {
+            "question": "Đâu không phải là kiểu dữ liệu tiêu chuẩn trong Python?",
+            "options": ["List", "Dictionary", "Class", "Tuple"],
+            "answer": 2
+        },
+        {
+            "question": "Hàm nào sau đây là hàm tích hợp sẵn trong Python",
+            "options": ["seed()", "sprt()", "factorial()", "print()"],
+            "answer": 3
+        },
+        {
+            "question": "Trường hợp nào sau đây không phải lệnh gán trong python?",
+            "options": ["cd = 50", "a = a * 2", "a = 10", "a + b = 10"],
+            "answer": 3
+        },
+        {
+            "question": "Tên biến nào sau đây là đúng trong Python?",
+            "options": ["–tich", "tong@", "1_dem", " ab_c1"],
+            "answer": 3
+        },
+        {
+            "question": "Để gán giá trị cho một biến số ta thực hiện như thế nào?",
+            "options": ["<giá trị> := A", "A = <giá trị>", "<giá trị> = A", "A := <giá trị>"],
+            "answer": 1
+        },
+        {
+            "question": "Trong ngôn ngữ Python, tên nào sau đây là từ khoá?",
+            "options": ["program, sqr", "uses, var", "include, const", "if, else"],
+            "answer": 3
+        },
+        {  
+            "question": "Trong ngôn ngữ lập trình Python, từ khoá và tên",
+            "options": ["Có ý nghĩa như nhau", "Phải tuân theo quy tắc đặt tên", "Có thể trùng nhau", "Cả ba đáp án trên đều đúng"],
+            "answer": 1
+        },
+        {
+            "question": "Để viết 3 mũ 4 trong Python ta chọn",
+            "options": ["3**4", "3//4", "3*3+3*3", "3%4"],
+            "answer": 0
+        }
+    ], 
+    "hard": [           
+        {
+            "question": "Ngôn ngữ lập trình là ngôn ngữ ",
+            "options": ["Máy tính", "Biểu diễn thuật toán", "Viết chương trình máy tính", "Giao tiếp với máy tính"],
+            "answer": 2
+        },
+        {
+            "question": "Chương trình dịch là phần mềm để.....máy tính sang ngôn ngữ máy.",
+            "options": ["dịch chương tình", "chuyển đổi chương trình", "nén chương trình", "xuất chương trình"],
+            "answer": 0
+        },
+        {
+            "question": "Điền vào chỗ trống sau: Python là phần mềm......và được sử dụng rộng rãi trong giáo dục và nghiên cứu ngày nay",
+            "options": ["có phí", "mã nguồn mở", "mã nguồn đóng", "virus"],
+            "answer": 1
+        },
+        {
+            "question": "Trong các tên gọi sau , đâu không phải là ngôn ngữ lập trình bậc cao?",
+            "options": ["Java", "C#", "C++", "Window"],
+            "answer": 3
+        },
+        {
+            "question": "Điền vào chỗ trống sau: Lệnh trong Python.....phân biệt chữ hoa và chữ thường. Viết chữ.....sẽ báo lỗi.",
+            "options": ["có - thường", "có - hoa", "không - hoa", "không - thường"],
+            "answer": 1
+        },
+        {
+            "question": "Lệnh print có 3 cặp nháy kép có ý nghĩa là",
+            "options": ["Thay thế phím Enter xuống hàng", "Không có ý nghĩa gì", "Thay thế phím Tab đầu dòng", "Báo lỗi"],
+            "answer": 0
+        },
+        {
+            "question": "Ai đã phát triển Ngôn ngữ lập trình Python?",
+            "options": ["Wick van Rossum", "Rasmus Lerdorf", "Guido van Rossum", "Niene Stom"],
+            "answer": 2
+        },
+        {
+            "question": "Ngôn ngữ Python được ra mắt lần đầu vào năm nào?",
+            "options": ["1995", "1972", "1981", "1991"],
+            "answer": 3
+        },
+        {
+            "question": "Phát biểu nào sau đây sai khi nói về python?",
+            "options": ["Là ngôn ngữ lập trình bậc cao", "Thu hút nhiều nhà khoa học", "Không phổ biến trong giáo dục", "Giống ngôn ngữ tự nhiên"],
+            "answer": 2
+        },
+        {
+            "question": "Điền vào chỗ trống: Chế độ gõ lệnh trực tiếp thích hợp cho việc.....và kiểm tra nhanh các lệnh",
+            "options": ["Tính toán", "Lập trình", "Giải quyết", "Xóa"],
+            "answer": 0
+        }
+    ]
+}

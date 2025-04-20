@@ -1,0 +1,23 @@
+Biên dịch và chạy chương trình:
+- Chuẩn bị mã nguồn:
+	+ Tệp index.html: chứa cấu trúc HTML của trò chơi.
+	+ Tệp style.css: chứa định dạng CSS để trang trí giao diện.
+	+ Tệp script.js: chứa mã JavaScript để xử lý logic trò chơi.
+	+ Tệp questions.json: chứa dữ liệu câu hỏi của trò chơi.
+	+ Các tệp hình ảnh và âm thanh.
+- Mở trò chơi trên trình duyệt:
+	+ Mở trò chơi thông qua Visual Studio Code:
+		*Bước 1: Mở ứng dụng Visual Studio Code.
+		*Bước 2: Chọn "Open folder" -> chọn thư mục "src".
+		*Bước 3: Nhấn vào nút LiveServer để chạy trò chơi trên trình duyệt đã chọn.
+	+ Mở trò chơi thông qua link: 
+		*Bước 1: Mở ứng dụng ngrok.
+		*Bước 2: Nhập dòng lệnh "ngrok http_id localhost của máy tính", ví dụ "ngrok http 5500" rồi nhấn Enter.
+		*Bước 3: Sao chép link đã tạo tại dòng Forwarding.
+		*Bước 4: Dán link lên trình duyệt hoặc chia sẻ qua các máy tính, thiết bị di động khác để vào trò chơi.
+(Lưu ý): 
+- Thiết bị đang chạy ngrok phải được kết nối mạng liên tục, nếu bị ngắt kết nối hoặc mất tín hiệu mạng thì người dùng sẽ không thể vào được trò chơi thông qua link đã tạo.
+- Khi mở trò chơi thông qua link, người dùng không cần phải cài đặt các file như index.html, style.css,...
+- Khi mở trò chơi trên máy tính hoặc các thiêt bị di động khác cần phải điều chỉnh tỷ lệ phù hợp. Đặc biệt đối với các thiết bị di động, ưu tiên sử dụng màn hình ngang và chế độ 
+dành cho máy tính để trò chơi được hiển thị một cách đầy đủ nhất. 
+- Người chơi cần phải xem kỹ trong phần giới thiệu và hướng dẫn để nắm rõ luật chơi và cách chơi.

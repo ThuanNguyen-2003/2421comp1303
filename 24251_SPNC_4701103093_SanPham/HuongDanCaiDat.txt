@@ -1,0 +1,9 @@
+- Môi trường phát triển: Visual Studio Code.
+- Môi trường thực nghiệm: Google Chrome.
+- Công cụ: HTML, CSS và JavaScript.
+- Hướng dẫn cài đặt:
+	+ Bước 1: Tải và cài đặt Visual Studio Code phiên bản phù hợp với máy tính.
+	+ Bước 2: Cài đặt extension LiveSever để chạy trò chơi trên trình duyệt.
+	+ Bước 3: Tải và giải nén thư mục "24251_SPNC_4701103093".
+	+ Bước 4: Mở Visual Studio Code -> Open Folder -> "24251_SPNC_4701103093" -> "24251_SPNC_4701103093_SanPham" -> chọn thư mục "src".
+	+ Bước 5: Kiểm tra thông tin, dữ liệu của các tệp (index.html, style.css, script.js, questions.json) và file (audio, img).
